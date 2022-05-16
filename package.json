@@ -1,0 +1,11 @@
+{
+  "name": "crypto-clicker",
+  "version": "1.0.0",
+  "description": "A react clicker game with a cryptocurrency theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Carrillo",
+  "license": "ISC"
+}
