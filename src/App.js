@@ -4,7 +4,7 @@ import UpgradeMenu from "./components/UpgradeMenu";
 
 function App() {
 	return (
-		<div>
+		<div className="app">
 			<Counter />
 			<UpgradeMenu />
 		</div>

@@ -4,17 +4,25 @@ class Upgrade extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			upgradeName: "default",
-			upgradeCost: 1,
-			upgradeCoinsPerInterval: 1,
-			intervalInMilliSeconds: 1000,
+			upgradeName: this.props.name,
+			upgradeCost: this.props.cost,
+			upgradeCoinsPerInterval: this.props.cpi,
+			intervalInMilliSeconds: this.props.interval,
 			isShowing: false,
 		};
+
+		this.purchaseUpgrade = this.purchaseUpgrade.bind(this);
 	}
+
+	purchaseUpgrade() {
+		return;
+	}
+
 	render() {
 		return (
-			<div>
+			<div className="upgrade" onClick={this.purchaseUpgrade}>
 				<h1>{this.state.upgradeName}</h1>
+				<h2>Cost: {this.state.upgradeCost}</h2>
 			</div>
 		);
 	}

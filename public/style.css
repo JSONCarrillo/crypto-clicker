@@ -1,3 +1,33 @@
-.menu{
-    
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+    display: flex;
+}
+
+.section{
+    width: 33%;
+    min-height: 100vh;
+}
+
+/*  Counter Section */
+
+.counter{
+    margin: 0 auto;
+    top: 50%;
+    text-align: center;
+}
+
+
+/*  Upgrade Section */
+
+.section:nth-child(2){
+    background-color: black;
+}
+
+.upgrade{
+    background-color: rgb(63, 161, 226);
+    border: 3px solid rgb(54, 54, 54);
 }
