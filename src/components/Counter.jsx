@@ -1,30 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Counter extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			counter: 0,
-		};
-		this.increment = this.increment.bind(this);
-	}
+const Counter = () => {
+	let count = 0;
+	const [counter, setCounter] = useState(count);
+	const increment = () => setCounter(counter + 1);
 
-	increment() {
-		this.setState((prevState) => ({
-			counter: prevState.counter + 1,
-		}));
-	}
-
-	render() {
-		return (
-			<div className="section">
-				<div className="counter">
-					<h1>{this.state.counter}</h1>
-					<button onClick={this.increment}>Click</button>
-				</div>
+	const element = (
+		<div className="section">
+			<div className="counter">
+				<h1>{counter}</h1>
+				<button onClick={increment}>Click</button>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+
+	return element;
+};
 
 export default Counter;

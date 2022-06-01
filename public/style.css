@@ -10,16 +10,18 @@
 .section{
     width: 33%;
     min-height: 100vh;
+    position: relative;
 }
 
 /*  Counter Section */
 
 .counter{
-    margin: 0 auto;
+    position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
-
 
 /*  Upgrade Section */
 
