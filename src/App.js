@@ -1,12 +1,12 @@
 import React from "react";
-import Counter from "./components/Counter";
+import Game from "./components/Game/Game";
 
-function App() {
+const App = () => {
 	return (
 		<div className="app">
-			<Counter />
+			<Game />
 		</div>
 	);
-}
+};
 
 export default App;
