@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "../Counter/Counter";
+import UpgradeMenu from "../Upgrades/UpgradeMenu";
 
-export default class Game extends React.Component {
-	constructor(props) {
-		super(props);
-		this.handleCountChange = this.handleCountChange.bind(this);
-		this.state = {
-			count: 0,
-		};
-	}
+export default function Game() {
+	const [availableCoins, setCoins] = useState(0);
+	const [coinsPerSecond, setCoinsPerSecond] = useState(0);
 
-	handleCountChange(count) {
-		this.setState({ count });
-	}
+	const handleIncrement = (amount) => {
+		setCoins((availableCoins) => availableCoins + amount);
+	};
 
-	render() {
-		const count = this.state.count;
-		const logState = () => {
-			console.log(count);
-		};
-		return (
-			<div className="app">
-				<Counter count={count} onCountChange={this.handleCountChange} />
-			</div>
-		);
-	}
+	const handleAutoIncrement = (coins, interval) => {
+		setInterval(() => handleIncrement(coins), interval);
+	};
+
+	const purchaseUpgrade = (cost) => {
+		setCoins(availableCoins - cost);
+		console.log(availableCoins);
+		console.log(availableCoins);
+	};
+
+	const element = (
+		<div className="app">
+			<Counter coins={availableCoins} handleIncrement={handleIncrement} />
+			<UpgradeMenu
+				purchaseUpgrade={purchaseUpgrade}
+				count={availableCoins}
+				handleAutoIncrement={handleAutoIncrement}
+			/>
+			<button onClick={() => console.log(availableCoins)}>
+				Test Coins
+			</button>
+		</div>
+	);
+
+	return element;
 }
