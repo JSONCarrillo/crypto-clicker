@@ -5,6 +5,7 @@
 
 .app{
     display: flex;
+    max-height: 100vh;
 }
 
 .section{
@@ -24,13 +25,25 @@
     text-align: center;
 }
 
+#click-button{
+    padding: 50px;
+    background-color: rgb(63, 161, 226);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: xx-large;
+}
+
 /*  Upgrade Section */
 
 .section:nth-child(2){
     background-color: black;
+    overflow-y: scroll;
 }
 
 .upgrade{
     background-color: rgb(63, 161, 226);
     border: 3px solid rgb(54, 54, 54);
 }
+

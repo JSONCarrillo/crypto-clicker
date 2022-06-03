@@ -9,7 +9,12 @@ export default function Counter(props) {
 			<div className="counter">
 				<h1>{coins} coins</h1>
 				<h1>{cps} coins per second</h1>
-				<button onClick={() => props.handleIncrement(1)}>Click</button>
+				<button
+					id={"click-button"}
+					onClick={() => props.handleIncrement(1)}
+				>
+					Click
+				</button>
 			</div>
 		</div>
 	);
