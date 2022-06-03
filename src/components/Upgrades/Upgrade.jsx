@@ -3,16 +3,22 @@ import React, { useState } from "react";
 export default function Upgrade(props) {
 	const [upgradeCost, setCost] = useState(props.cost);
 	const [coinsPerInterval, setCPI] = useState(props.coinsPerInterval);
-	const [interval, setCoinInterval] = useState(props.interval);
+
+	let costIncrease = Math.ceil(upgradeCost * 1.1);
+
+	const handleCoinsPerSecond = (cps) => {
+		props.handleCoinsPerSecond(cps);
+	};
 
 	const handlePurchase = () => {
-		if (upgradeCost > props.count) {
+		if (upgradeCost > props.availableCoins) {
 			alert("You do not have enough coins for this purchase!");
 			return;
 		}
 		props.purchaseUpgrade(upgradeCost);
-		setCost(upgradeCost + Math.ceil(upgradeCost * 1.3));
-		props.handleAutoIncrement(coinsPerInterval, interval);
+		setCost(costIncrease);
+		props.handleAutoIncrement(coinsPerInterval);
+		handleCoinsPerSecond(props.coinsPerInterval);
 	};
 
 	const element = (

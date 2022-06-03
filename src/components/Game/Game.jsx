@@ -10,8 +10,8 @@ export default function Game() {
 		setCoins((availableCoins) => availableCoins + amount);
 	};
 
-	const handleAutoIncrement = (coins, interval) => {
-		setInterval(() => handleIncrement(coins), interval);
+	const handleAutoIncrement = (coins) => {
+		setInterval(() => handleIncrement(coins), 1000);
 	};
 
 	const purchaseUpgrade = (cost) => {
@@ -20,17 +20,23 @@ export default function Game() {
 		console.log(availableCoins);
 	};
 
+	const handleCoinsPerSecond = (cps) => {
+		setCoinsPerSecond((coinsPerSecond) => coinsPerSecond + cps);
+	};
+
 	const element = (
 		<div className="app">
-			<Counter coins={availableCoins} handleIncrement={handleIncrement} />
+			<Counter
+				coins={availableCoins}
+				handleIncrement={handleIncrement}
+				coinsPerSecond={coinsPerSecond}
+			/>
 			<UpgradeMenu
 				purchaseUpgrade={purchaseUpgrade}
-				count={availableCoins}
+				availableCoins={availableCoins}
 				handleAutoIncrement={handleAutoIncrement}
+				handleCoinsPerSecond={handleCoinsPerSecond}
 			/>
-			<button onClick={() => console.log(availableCoins)}>
-				Test Coins
-			</button>
 		</div>
 	);
 
