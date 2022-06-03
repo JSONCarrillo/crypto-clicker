@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export default function Counter(props) {
-	const coins = Math.round(props.coins * 1) / 1;
-	const cps = props.coinsPerSecond;
+	const coins = Math.floor(props.coins * 1) / 1;
+	const cps = Math.round(props.coinsPerSecond * 10) / 10;
 
 	const element = (
 		<div className="section">
