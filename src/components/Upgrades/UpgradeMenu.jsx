@@ -1,12 +1,14 @@
 import React from "react";
 import Upgrade from "./Upgrade";
 
+// upgrade object
 function CoinUpgrade(name, cost, coinsPerInterval) {
 	this.name = name;
 	this.cost = cost;
 	this.coinsPerInterval = coinsPerInterval;
 }
 
+//upgrade component
 export default function UpgradeMenu(props) {
 	const upgrades = [
 		new CoinUpgrade("Helping Hand", 15, 0.1),
